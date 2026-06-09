@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Premier League Champions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1 style="font-style: bold ;">🏆 LAST 10 PREMIER LEAGUE CHAMPIONS</h1>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="photo-1577223597229-2a83f97def38.jpg">
+      <h2>Arsenal</h2>
+      <p>2025/26 Champions</p>
+    </div>
+
+    <div class="card">
+      <img src="liverpool-fc.jpg">
+      <h2>Liverpool</h2>
+      <p>2024/25 Champions</p>
+    </div>
+
+    <div class="card">
+      <img src="Manchester_City_FC_badge.svg.jpg">
+      <h2>Manchester City</h2>
+      <p>2023/24 Champions</p>
+    </div>
+
+    <div class="card">
+      <img src="Manchester_City_FC_badge.svg.jpg">
+      <h2>Manchester City</h2>
+      <p>2022/23 Champions</p>
+    </div>
+
+    <div class="card">
+      <img src="Manchester_City_FC_badge.svg.jpg">
+      <h2>Manchester City</h2>
+      <p>2021/22 Champions</p>
+    </div>
+
+     <div class="card">
+      <img src="Manchester_City_FC_badge.svg.jpg">
+      <h2>Manchester City</h2>
+      <p>2020/21 Champions</p>
+    </div>
+
+
+    <div class="card">
+      <img src="liverpool-fc.jpg">
+      <h2>Liverpool</h2>
+      <p>2019/20 Champions</p>
+    </div>
+
+<div class="card">
+      <img src="Manchester_City_FC_badge.svg.jpg">
+      <h2>Manchester City</h2>
+      <p>2018/19 Champions</p>
+    </div>
+
+
+
+<div class="card">
+      <img src="Manchester_City_FC_badge.svg.jpg">
+      <h2>Manchester City</h2>
+      <p>2017/18 Champions</p>
+    </div>
+
+    <div class="card">
+      <img src="Chelsea_FC.svg.jpg">
+      <h2>Chelsea</h2>
+      <p>2016/17 Champions</p>
+    </div>
+
+
+    <div class="card">
+      <img src="Leicester_City_crest.svg.jpg">
+      <h2>Leicester City</h2>
+      <p>2015/16 Champions</p>
+    </div>
+
+  </div>
+<script>
+// 🔍 SEARCH FEATURE (filter cards)
+const cards = document.querySelectorAll(".card");
+
+// Create search box dynamically
+const searchBox = document.createElement("input");
+searchBox.placeholder = "Search club...";
+searchBox.style.padding = "10px";
+searchBox.style.margin = "15px";
+searchBox.style.width = "200px";
+document.body.insertBefore(searchBox, document.querySelector(".container"));
+
+searchBox.addEventListener("keyup", function () {
+  const value = searchBox.value.toLowerCase();
+
+  cards.forEach(card => {
+    const clubName = card.querySelector("h2").innerText.toLowerCase();
+
+    if (clubName.includes(value)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+
+// 🖱 CLICK FEATURE (show details popup)
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    const club = card.querySelector("h2").innerText;
+    const year = card.querySelector("p").innerText;
+
+    alert(`🏆 ${club}\n📅 ${year}`);
+  });
+});
+
+// ⭐ HOVER EFFECT (extra glow)
+cards.forEach(card => {
+  card.addEventListener("mouseover", () => {
+    card.style.boxShadow = "0 0 20px #38bdf8";
+  });
+
+  card.addEventListener("mouseout", () => {
+    card.style.boxShadow = "0 0 10px black";
+  });
+});
+</script>
+</body>
+</html>
